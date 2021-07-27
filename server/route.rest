@@ -1,0 +1,19 @@
+POST http://localhost:4000/account/signup
+Content-Type: application/json
+
+{
+    "firstName": "test",
+    "lastName": "er",
+    "email": "test@gmail.com",
+    "password": "goodgood"
+}
+
+###
+
+POST http://localhost:4000/account/signin
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "goodgood"
+}
