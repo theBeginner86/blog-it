@@ -1,11 +1,12 @@
+
 POST http://localhost:4000/account/signup
 Content-Type: application/json
 
 {
-    "firstName": "test",
-    "lastName": "er",
-    "email": "test@gmail.com",
-    "password": "goodgood"
+    "firstName": "new",
+    "lastName": "account",
+    "email": "new.account@gmail.com",
+    "password": "goodbad"
 }
 
 ###
@@ -14,6 +15,15 @@ POST http://localhost:4000/account/signin
 Content-Type: application/json
 
 {
-    "email": "test@gmail.com",
-    "password": "goodgood"
+    "email": "new.account@gmail.com",
+    "password": "goodbad"
 }
+
+###
+
+POST http://localhost:4000/account/verify/user
+Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImZpcnN0TmFtZSI6Im5ldyIsImxhc3ROYW1lIjoiYWNjb3VudCIsImVtYWlsIjoibmV3LmFjY291bnRAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMDgkWjNRb0hPVDN2TVdDQndwZ1dlcDZsdUZLcElQeS9FZlB4TU0vNkVYYS50em82a1ptbWZSTk8iLCJfaWQiOiI2MTAyNGVjYmYwNWU0NzJhYmE4MDg0NTEiLCJfX3YiOjB9LCJpYXQiOjE2Mjc1NDEyMjUsImV4cCI6MTYyNzU0MTI0MH0.K4SLws9Ezl3mfYKleFwrJWJvCEbzaz5fJr3nvKzG-68
+
+###
+
+
