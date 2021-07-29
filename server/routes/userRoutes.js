@@ -134,6 +134,7 @@ router.post("/signin", async (req, res) => {
         const accessToken = generateAccessToken(user);
         // const refershToken = jwt.sign({user}, process.env.REFRESH_TOKEN_SECRET); future addition
         res.json({
+            success: true,
             accessToken: accessToken,
             // refershToken: refershToken  future addition
         });
@@ -143,7 +144,13 @@ router.post("/signin", async (req, res) => {
 });
 
 router.post("/verify/user", authenticateToken, (req, res) => {
+    const user = req.user;
+    console.log(user);
     console.log("user verified...");
+    return res.send({
+        success: true,
+        user: user.user
+    });
 });
 
 // router.get("/token", (req, res) => {         future addition
