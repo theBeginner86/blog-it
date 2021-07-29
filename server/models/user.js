@@ -23,6 +23,11 @@ const UserSchema = new Schema({
         requrired: true,
         default: ''
     },
+    dateCreated: {
+        type: Date,
+        required: true,
+        default: Date.now()
+    }
 });
 
 // UserSchema.methods.generateHash = (password) => {
