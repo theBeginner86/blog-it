@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {Redirect, useHistory} from 'react-router-dom';
 import {signupNewUser} from '../api/userApi';
 
 function SignUp(props) {
-
-    // useEffect(() => {
-    //     setSignupResponse(props);
-    // }, [props])
 
     const history = useHistory();
 
