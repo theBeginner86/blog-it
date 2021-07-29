@@ -1,0 +1,13 @@
+.signin-heading {
+    width: fit-content;
+    margin: auto;
+}
+
+.signin-form, .input-values {
+    width: fit-content;
+    margin: auto;
+}
+
+.submit-btn {
+    margin: auto;
+}

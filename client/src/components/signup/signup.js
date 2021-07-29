@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {Redirect, useHistory} from 'react-router-dom';
-import {signupNewUser} from '../api/userApi';
+import {signupNewUser} from '../../api/userApi';
+import './signup.css';
 
 function SignUp(props) {
 
@@ -38,7 +39,7 @@ function SignUp(props) {
             }
             
         } catch (err) {
-            setSignupResponse(err);
+            setSignupResponse({message: err});
         }
     };
 
@@ -58,9 +59,9 @@ function SignUp(props) {
                        
                         <input type="text" name="firstName" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)}/><br/>
                         <input type="text" name="lastName" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)}/><br/> 
-                        <input type="text" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/> 
-                        <input type="text" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/><br/>
-                        <button type="submit" className="submit-btn">Submit</button>
+                        <input type="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/> 
+                        <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/><br/>
+                        <button type="submit" className="submit-btn">Sign Up</button>
                     </div>       
                 </form>
             </div>
