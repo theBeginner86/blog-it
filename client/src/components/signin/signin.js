@@ -5,6 +5,9 @@ import './signin.css'
 
 function SignIn(props) {
 
+    console.log(props);
+    const {setIsLogout, isLogout} = props;
+    console.log(isLogout);
     const history = useHistory();
 
     const [email, setEmail] = useState("");
@@ -26,6 +29,7 @@ function SignIn(props) {
             setSigninResponse(data);
             console.log("signinResponse: ", signinResponse);
             if(data.success){
+                setIsLogout(false);
                 localStorage.setItem("token", data.accessToken);
                 history.push("/");
                 return <Redirect to="/"/>

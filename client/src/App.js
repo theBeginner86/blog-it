@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Switch, Route, useHistory, Redirect } from 'react-router-dom';
 
 import HomePage from './components/home-page';
@@ -10,23 +10,31 @@ import SignIn from './components/signin/signin';
 function App() {
   const history = useHistory();
 
-  const [logoutStatus, setlogoutStatus] = useState(true);
+  const [isLogout, setIsLogout] = useState(true);
+
+  useEffect(() => {
+    if(localStorage.getItem("token")){
+      setIsLogout(false);
+    } else {
+      setIsLogout(true);
+    }
+  }, []);
 
   const logOutHandle = async () => {
-    setlogoutStatus(false);
+    setIsLogout(true);
     localStorage.removeItem("token");
     // console.log(history);
     // history.push("/");
-    // return <Redirect to="/"/>
+    return <Redirect to="/"/>
   }
 
   return (
     <Router>
-        <MyNavbar logOutHandle={logOutHandle}/>
+        <MyNavbar logOutHandle={logOutHandle} isLogout={isLogout} />
         <Switch>
           <Route path='/' component={HomePage} exact/>
           <Route path='/signup' component={SignUp} />
-          <Route path="/signin" component={SignIn}/>
+          <Route path="/signin" render={(props) => (<SignIn {...props} isLogout={isLogout} setIsLogout={setIsLogout} />)}/>
         </Switch>
     </Router>
   );
