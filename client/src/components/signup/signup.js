@@ -45,10 +45,11 @@ function SignUp(props) {
 
     
     return ( 
-        <div className="container signup content">
+        <div className="signup content">
 
+        <div className="container">
             <div  className="signup-heading">
-                <h1>Signup</h1>
+                <h1 className="heading-per-page">Signup</h1>
             </div>
             <div className="container">
                 <form onSubmit={handleSubmit} className="signup-form">
@@ -65,6 +66,7 @@ function SignUp(props) {
                     </div>       
                 </form>
             </div>
+        </div>
     
         </div>
     );
