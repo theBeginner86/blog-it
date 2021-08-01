@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import HomePage from './homepage/home-page';
+import HomePage from './components/homepage/home-page';
 import MyNavbar from './components/navbar/navbar';
 import SignUp from './components/signup/signup';
 import SignIn from './components/signin/signin';
+import Footer from './components/footer/footer'
 
 
 function App(props) {
@@ -33,6 +34,7 @@ function App(props) {
           <Route path='/signup' component={SignUp} />
           <Route path="/signin" render={(props) => (<SignIn {...props} isLogout={isLogout} setIsLogout={setIsLogout} />)}/>
         </Switch>
+        <Footer/>
     </Router>
   );
 }
