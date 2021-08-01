@@ -24,9 +24,14 @@ const UserSchema = new Schema({
         default: ''
     },
     dateCreated: {
-        type: Date,
-        required: true,
-        default: Date.now()
+        type: String,
+        required: false,
+        default:''
+    },
+    noOfBlogs: {
+        type: Number,
+        required: false,
+        default: 0
     }
 });
 
@@ -40,6 +45,10 @@ UserSchema.pre('save', async function (next) {
 	if (user.isModified('password')) {
 		user.password = await bcrypt.hash(user.password, 8);
 	}
+    console.log('here');
+    const timeElapsed = Date.now();
+    const todayDate = new Date(timeElapsed);
+    user.dateCreated = todayDate.toUTCString(); 
 	next();
 });
 
