@@ -1,5 +1,5 @@
 import React from 'react';
-import './homepage.css'
+import './home-page.css'
 
 function HomePage(props) {
     return ( 
