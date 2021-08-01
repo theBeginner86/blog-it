@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import {BrowserRouter as Router} from 'react-router-dom'
+import './navbar.css';
 
 function MyNavbar(props) { 
 
@@ -11,7 +12,7 @@ function MyNavbar(props) {
     return ( 
         <div>
             <Router>
-                <Navbar bg='light'>
+                <Navbar className="navbar">
                     <Container>
                         <Navbar.Brand href="/">Blog It</Navbar.Brand>
                         <Nav className="me-auto">
