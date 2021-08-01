@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useHistory, Redirect} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import {signinExistingUser} from "../../api/userApi";
 import './signin.css'
 
@@ -31,8 +31,8 @@ function SignIn(props) {
             if(data.success){
                 setIsLogout(false);
                 localStorage.setItem("token", data.accessToken);
+                console.log(history);
                 history.push("/");
-                return <Redirect to="/"/>
             }
         } catch(err) {
             setSigninResponse({message: err});
