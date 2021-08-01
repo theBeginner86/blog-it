@@ -75,7 +75,7 @@ router.post("/signup", async (req, res)=> {
                     message: "Error: Server Error"
                 });
             };
-            console.log(response);
+            // console.log(response);
             return res.send({
                 success: true,
                 message: "User Sign up successfully"
@@ -129,9 +129,9 @@ router.post("/signin", async (req, res) => {
             });
         }
 
-        console.log({user});
+        // console.log(user);
 
-        const accessToken = generateAccessToken(user);
+        const accessToken = generateAccessToken(user._id);
         // const refershToken = jwt.sign({user}, process.env.REFRESH_TOKEN_SECRET); future addition
         res.json({
             success: true,
@@ -143,14 +143,25 @@ router.post("/signin", async (req, res) => {
     
 });
 
-router.post("/verify/user", authenticateToken, (req, res) => {
-    const user = req.user;
-    console.log(user);
+router.get("/verify/user", authenticateToken, (req, res) => {
+    const userid = req.userid;
+    console.log(userid);
     console.log("user verified...");
-    return res.send({
-        success: true,
-        user: user.user
-    });
+    User.find({ 
+        _id: userid.user 
+    }, (err, currentUser) => {
+        if(err){
+            return res.send({
+                success: false,
+                message: "Error: DB Error"
+            });
+        }
+
+        return res.send({
+            success: true,
+            user: currentUser
+        });
+    })
 });
 
 // router.get("/token", (req, res) => {         future addition
