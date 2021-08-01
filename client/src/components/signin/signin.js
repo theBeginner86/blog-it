@@ -40,10 +40,11 @@ function SignIn(props) {
     }
 
     return (
-        <div className="container signin content">
+        <div className="signin content">
 
+        <div className="container">
             <div  className="signin-heading">
-                <h1>Login</h1>
+                <h1 className="heading-per-page">Login</h1>
             </div>
             <div className="container">
                 <form onSubmit={handleSubmit} className="signin-form">
@@ -58,6 +59,7 @@ function SignIn(props) {
                     </div>       
                 </form>
             </div>
+        </div>
     
         </div>
     );
