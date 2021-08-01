@@ -3,9 +3,9 @@ import './homepage.css'
 
 function HomePage(props) {
     return ( 
-        <div className="container home-page content">
-            <div className="intro">
-                <h1>Blog it</h1>
+        <div className="home-page content">
+            <div className="container intro">
+                <h1 className="heading-home-page">Blog it</h1>
                 <div className="container blog-description">
                     <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 

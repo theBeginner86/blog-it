@@ -1,3 +1,15 @@
 .blog-description {
     padding: 3rem;
 }
+
+.home-page {
+    background-color: #FFD371;
+}
+
+.heading-home-page {
+    margin: auto;
+    width: fit-content;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625rem;
+
+}
