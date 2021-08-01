@@ -5,7 +5,7 @@ function HomePage(props) {
     return ( 
         <div className="home-page content">
             <div className="container intro">
-                <h1 className="heading-home-page">Blog it</h1>
+                <h1 className="heading-per-page">Blog it</h1>
                 <div className="container blog-description">
                     <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
