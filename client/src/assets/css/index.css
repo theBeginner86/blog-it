@@ -19,3 +19,10 @@ code {
 p {
   color: #000;
 }
+
+.heading-per-page {
+  margin: auto;
+  width: fit-content;
+  font-family: 'Sacramento', cursive;
+  font-size: 5.625rem;
+}
