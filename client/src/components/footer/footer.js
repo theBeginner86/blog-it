@@ -9,7 +9,7 @@ function Footer(props){
     return (
         <div className="footer">
             <div className="container footer-info">
-                    <Link className="footer-link" to={{pathname: "https://github.com/theBeginner86"}}><img class="profile-img" src={githubLogo} alt="github-icon"/></Link>
+                    <Link className="footer-link" to={{pathname: "https://github.com/theBeginner86"}}><img className="profile-img" src={githubLogo} alt="github-icon"/></Link>
                     <Link className="footer-link" to={{pathname: "https://www.linkedin.com/in/pranav-singh-00904b1bb/"}}><img className="profile-img" src={linkedinLogo} alt="linkedin-icon"/></Link>
                     <Link className="footer-link" to={{pathname: "https://twitter.com/theBeginner86"}}><img className="profile-img" src={twitterLogo} alt="twitter-icon"/></Link>
                     <p className="copyright">© 2021 Pranav Singh.</p>
