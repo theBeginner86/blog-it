@@ -17,7 +17,10 @@ function MyNavbar(props) {
                         <Navbar.Brand href="/">Blog It</Navbar.Brand>
                         <Nav className="me-auto">
                             { !isLogout && (
-                                <Nav.Link onClick={logOutHandle}>Log Out</Nav.Link> 
+                                <React.Fragment>
+                                    <Nav.Link href="/" onClick={logOutHandle}>Log Out</Nav.Link> 
+                                    <Nav.Link href='/profile'>Profile</Nav.Link>
+                                </React.Fragment> 
                             )}
                             { isLogout && (
                                 <React.Fragment>
