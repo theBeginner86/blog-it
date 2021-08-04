@@ -16,6 +16,7 @@ function MyNavbar(props) {
                     <Container>
                         <Navbar.Brand href="/">Blog It</Navbar.Brand>
                         <Nav className="me-auto">
+                        <Nav.Link href="/blogs">Blogs</Nav.Link>
                             { !isLogout && (
                                 <React.Fragment>
                                     <Nav.Link href="/" onClick={logOutHandle}>Log Out</Nav.Link> 
