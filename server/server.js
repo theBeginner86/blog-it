@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
-const router = require('./routes/userRoutes');
+const userRouter = require('./routes/userRoutes');
+const blogRouter = require("./routes/blogRoutes");
 
 dotenv.config();
 
@@ -17,7 +18,8 @@ app.use(express.json());
 
 connectDB();
 
-app.use("/account", router);
+app.use("/account", userRouter);
+app.use("/blog", blogRouter);
 
 app.get("/", async (req, res) => {
     res.write(`<h1>This is a basic MERN Stack project for blogging</h1>`);
