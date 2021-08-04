@@ -30,9 +30,9 @@
 }
 
 .blog-content .description {
-    color: #000;
+    color: #3C4858;
     font-weight: bolder;
-    font-family: "Times New Roman";
+    font-family: "Times New Roman", sans-serif;
     padding: 20px 0;
 }
 
