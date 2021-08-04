@@ -20,7 +20,7 @@ function App(props) {
     } else {
       setIsLogout(true);
     }
-  }, []);
+  }, [isLogout]);
 
   const logOutHandle = () => {
     setIsLogout(true);
