@@ -1,39 +1,43 @@
+.profile-content .container.profile{
+    padding: 1rem 0 1rem 0;
+}
 
-h6 {
+
+.profile-content h6 {
     font-size: .75rem !important;
     font-weight: 500;
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
     line-height: 1.5em;
 }
 
-.name h6 {
+.profile-content .name h6 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 
-.profile-page .page-header {
+/* .profile-page .page-header {
     height: 380px;
     background-position:center;
-}
+} */
 
-.main-raised {
-    margin: 60px 160px;
+.profile-content .main-raised {
+    margin: 60px 290px;
     border-radius: 6px;
     box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
 }
 
-.main {
+.profile-content .main {
     background: #FFF;
     position: relative;
     z-index: 3;
 }
 
-.profile-page .profile {
+.profile-content .profile {
     text-align: center;
 }
 
-.profile-page .profile img {
+.profile-content .profile img {
     max-width: 160px;
     width: 100%;
     margin: 0 auto;
@@ -52,7 +56,7 @@ h6 {
     height: auto;
 }
 
-.title {
+.profile-content .title {
     margin-top: 30px;
     margin-bottom: 25px;
     min-height: 32px;
@@ -61,7 +65,7 @@ h6 {
     font-family: "Roboto Slab","Times New Roman",serif;
 }
 
-.profile-page .description {
+/* .profile-page .description {
     margin: 1.071rem auto 0;
     max-width: 600px;
     color: #999;
@@ -72,28 +76,28 @@ h6 {
     width: 400px;
     padding: 20px 0;
     margin: auto;
-}
+} */
 
-p {
+profile-content .p {
     font-size: 14px;
     margin: 0 0 10px;
 }
 
-.profile-page {
+/* .profile-page {
     margin-top: 4.284rem;
 }
 
 .profile-page {
     margin-top: 3.213rem;
     padding-bottom: 50px;
-}
-
+} */
+/* 
 .profile-page {
     width: 100%;
     margin-bottom: 2.142rem;
-}
+} */
 
-.profile-page .profile .name{
+.profile.name{
     margin-top: -80px;
 }
 

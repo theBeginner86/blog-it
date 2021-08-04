@@ -49,9 +49,9 @@ function ProfilePage(props){
 
     return (
         <div className="content">
-            <div className="main main-raised">
-                <div className="profile-content" Style={"text-align: center; width: 40rem; margin: auto;"}>
-                    <div className="container profile">
+            <div className="profile-content">
+                <div className="main main-raised">
+                    <div className="container profile" Style={"text-align: center; width: 40rem; margin: auto;"}>
                         <div className="avatar">
                             <img className="img-raised rounded-circle img-fluid" src={profilePictureUrl} alt="Circle-Image"/>
                         </div>
