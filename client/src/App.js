@@ -7,6 +7,7 @@ import SignUp from './components/signup/signup';
 import SignIn from './components/signin/signin';
 import Footer from './components/footer/footer';
 import ProfilePage from './components/profilepage/profile-page';
+import Blogs from './components/blogs/blog';
 
 
 function App(props) {
@@ -34,6 +35,7 @@ function App(props) {
           <Route path='/signup' component={SignUp} />
           <Route path="/signin" render={(props) => (<SignIn {...props} isLogout={isLogout} setIsLogout={setIsLogout} />)}/>
           <Route path='/profile' render={(props) => (<ProfilePage {...props} isLogout={isLogout} setIsLogout={setIsLogout} />)}/>
+          <Route path='/blogs' component={Blogs}/>
         </Switch>
         <Footer/>
     </Router>
