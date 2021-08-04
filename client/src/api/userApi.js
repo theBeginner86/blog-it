@@ -13,3 +13,8 @@ export const getUserDetails = (token) => axios({
         Authorization: `BEARER ${token}`,
     },
 });
+
+export const getAllblogs = () => axios({
+    method: "GET",
+    url: `${blogUrl}/display/all`
+})
