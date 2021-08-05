@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-import { getAllblogs } from '../../api/userApi';
+import { getAllBlogs } from '../../api/userApi';
 
 import './blog.css';
 
@@ -12,7 +12,7 @@ function Blogs(props){
 
     useEffect(() => {
         const fetchBlogs = async () => {
-            const {data} = await getAllblogs();
+            const {data} = await getAllBlogs();
             console.log(data);
             setBlogs(data.blogs);
             console.log(blogs);
@@ -24,32 +24,31 @@ function Blogs(props){
 
         <div className="content">
         {   
-            (blogs.length!==1) ? 
-            <></> 
-            : 
-            (<div className="blog-content">
-                <div className="main main-raised">
-                    <div className="container blog">
-                        <h1 className="title">Test Blog</h1>
-                        <hr/>
-                        <p className="description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <hr/>
-                        <div className="blog-info">
-                            <p className="time">Time</p>
-                            <p className="author-info">Random person</p>
+            (blogs.length <= 1) ? 
+
+            (
+                <div className="blog-content">
+                    <div className="main main-raised">
+                        <div className="container blog">
+                            <h1 className="title">Test Blog</h1>
+                            <hr/>
+                            <p className="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <hr/>
+                            <div className="blog-info">
+                                <p className="time">Time</p>
+                                <p className="author-info">Random person</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>)
-        }
-        
-
-            { blogs.map((blog, index) => {
+            )
+            :
+            blogs.map((blog, index) => {
                 return (
                     <React.Fragment>
                         <div className="blog-content" key={index}>
@@ -71,7 +70,7 @@ function Blogs(props){
                     </React.Fragment>
                 )
             })
-            }
+        }
 
         </div>
     );
