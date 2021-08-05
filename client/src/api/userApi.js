@@ -14,7 +14,15 @@ export const getUserDetails = (token) => axios({
     },
 });
 
-export const getAllblogs = () => axios({
+export const getAllBlogs = () => axios({
     method: "GET",
     url: `${blogUrl}/display/all`
+})
+
+export const getUserBlogs = (userid, token) => axios({
+    method: "GET",
+    url: `${blogUrl}/display/user=${userid}`,
+    headers: {
+        Authorization: `BEARER ${token}`,
+    },
 })
