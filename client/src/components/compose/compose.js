@@ -1,13 +1,10 @@
 import React, {useState} from 'react';
-import { Redirect, useHistory } from 'react-router';
 
 import { composeBlog } from '../../api/userApi';
 
 import './compose.css';
 
 function Compose(props){
-
-    const history = useHistory();
 
     const [blog, setBlog] = useState("");
     const [title, setTitle] = useState("");

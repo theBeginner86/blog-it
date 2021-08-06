@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react'
 
-import Compose from '../compose/compose';
-
 import { getAllBlogs } from '../../api/userApi';
 
 import './blog.css';
