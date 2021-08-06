@@ -19,6 +19,7 @@ function MyNavbar(props) {
                         <Nav.Link href="/blogs">Blogs</Nav.Link>
                             { !isLogout && (
                                 <React.Fragment>
+                                    <Nav.Link href="/compose">Compose</Nav.Link>
                                     <Nav.Link href="/" onClick={logOutHandle}>Log Out</Nav.Link> 
                                     <Nav.Link href='/profile'>Profile</Nav.Link>
                                 </React.Fragment> 

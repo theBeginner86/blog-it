@@ -13,3 +13,25 @@ export const getUserDetails = (token) => axios({
         Authorization: `BEARER ${token}`,
     },
 });
+
+export const getAllBlogs = () => axios({
+    method: "GET",
+    url: `${blogUrl}/display/all`
+});
+
+export const getUserBlogs = (userid, token) => axios({
+    method: "GET",
+    url: `${blogUrl}/display/user=${userid}`,
+    headers: {
+        Authorization: `BEARER ${token}`,
+    },
+});
+
+export const composeBlog = (blogDetails, token) => axios.post(`${blogUrl}/compose`, blogDetails, 
+    {
+        headers: {
+            Authorization: `BEARER ${token}`,
+        }
+    }
+);
+

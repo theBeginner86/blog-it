@@ -8,6 +8,7 @@ import SignIn from './components/signin/signin';
 import Footer from './components/footer/footer';
 import ProfilePage from './components/profilepage/profile-page';
 import Blogs from './components/blogs/blog';
+import Compose from './components/compose/compose';
 
 
 function App(props) {
@@ -20,7 +21,7 @@ function App(props) {
     } else {
       setIsLogout(true);
     }
-  }, []);
+  }, [isLogout]);
 
   const logOutHandle = () => {
     setIsLogout(true);
@@ -36,6 +37,7 @@ function App(props) {
           <Route path="/signin" render={(props) => (<SignIn {...props} isLogout={isLogout} setIsLogout={setIsLogout} />)}/>
           <Route path='/profile' render={(props) => (<ProfilePage {...props} isLogout={isLogout} setIsLogout={setIsLogout} />)}/>
           <Route path='/blogs' component={Blogs}/>
+          <Route path='/compose' component={Compose}/>
         </Switch>
         <Footer/>
     </Router>

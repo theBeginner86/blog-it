@@ -1,0 +1,13 @@
+.compose-area {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.submit-btn {
+    margin: 1rem auto;
+    width: fit-content;
+}
