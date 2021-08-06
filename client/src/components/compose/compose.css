@@ -3,6 +3,14 @@
     margin-bottom: 1rem;
 }
 
+.compose-area .err-msg {
+    color: red;
+}
+
+.compose-area .success-msg {
+    color: green;
+}
+
 .title {
     margin: 0.5rem 0 0.5rem 0;
 }
