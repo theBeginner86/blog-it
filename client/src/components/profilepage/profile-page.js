@@ -106,7 +106,7 @@ function ProfilePage(props){
                     </div>
                 )
                 :
-                blogs.map((blog, index) => {
+                blogs.slice(0).reverse().map((blog, index) => {
                     return (
                         <React.Fragment>
                             <div className="blog-content" key={index}>
