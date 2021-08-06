@@ -26,7 +26,7 @@ function Blogs(props){
 
         <div className="content">
         {   
-            (blogs.length <= 1) ? 
+            (blogs.length < 1) ? 
 
             (
                 <div className="blog-content">
@@ -50,7 +50,7 @@ function Blogs(props){
                 </div>
             )
             :
-            blogs.map((blog, index) => {
+            blogs.slice(0).reverse().map((blog, index) => {
                 return (
                     <React.Fragment>
                         <div className="blog-content" key={index}>
