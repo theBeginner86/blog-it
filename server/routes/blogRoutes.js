@@ -5,6 +5,7 @@ const User = require("../models/user");
 const Blog = require("../models/blog");
 
 const { authenticateToken } = require('../utils/authenticateToken');
+const { response } = require("express");
 
 router.post("/compose", authenticateToken, async (req, res) => {
     const {user} = req.userid;
@@ -143,5 +144,26 @@ router.get("/display/user=:id", authenticateToken, async(req, res) => {
     });
 })
 
+router.post("/delete/blog=:blogid", authenticateToken, async(req, res) => {
+    console.log("working params: ",  "blogid: ", req.params.blogid);
+    const blogid = req.params.blogid;
+    Blog.deleteOne({
+        _id: blogid
+    }, async(err, response) => {
+        if(err){
+            return res.send({
+                success: false,
+                message: "Error: DB Error"
+            });
+        }
+
+        console.log(response);
+
+        return res.send({
+            success: true,
+            message: "Blog deleted successfully"
+        });
+    })
+});
 
 module.exports = router;
