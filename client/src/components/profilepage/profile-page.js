@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory, Redirect} from 'react-router-dom';
 
-import { getUserDetails, getUserBlogs } from '../../api/userApi';
+import { getUserDetails, getUserBlogs, deleteBlog } from '../../api/userApi';
 
 import './profile-page.css';
 
@@ -18,6 +18,8 @@ function ProfilePage(props){
     const [email, setEmail] = useState("");
     const [userid, setUserid] = useState("");
     const [blogs, setBlogs] = useState([]);
+    const [delStatus, setDelStatus] = useState({});
+    const [delBlog, setDelBlog] = useState("");
 
     console.log("inside try profile page");
     console.log(isLogout);
@@ -47,6 +49,15 @@ function ProfilePage(props){
 
     fun();
 
+    async function deleteBlogs(blogid) {
+        setDelBlog(blogid);
+        const {data} = await deleteBlog(blogid, localStorage.getItem("token"));
+        console.log(data);
+        setDelStatus(data);
+
+        console.log("clicked", blogid);
+    }
+
     useEffect(() => {
         const fetchBlogs = async () => {
             console.log(userid)
@@ -56,13 +67,11 @@ function ProfilePage(props){
             console.log(blogs);
         };
         fetchBlogs();
-    }, [userid]);
-
-    
-
+    }, [userid, delBlog]);
 
     return (
         <div className="content">
+            <h1 className="heading-per-page">My Profile</h1>
             <div className="profile-content">
                 <div className="main main-raised">
                     <div className="container profile" Style={"text-align: center; width: 40rem; margin: auto;"}>
@@ -112,6 +121,12 @@ function ProfilePage(props){
                             <div className="blog-content" key={index}>
                                 <div className="main main-raised">
                                     <div className="container blog">
+                                        {
+                                            (!delStatus.success && blog._id===delBlog) ?  <div className="err-msg"><div className="msg">{delStatus.message}</div></div> : <div className="err-msg"></div>
+                                        }
+                                        <div className="ud-op">
+                                            <button className="delete-btn" onClick={() => deleteBlogs(blog._id)}>Delete</button>
+                                        </div>
                                         <h1 className="title">{blog.title}</h1>
                                         <hr/>
                                         <p className="description">
