@@ -35,3 +35,11 @@ export const composeBlog = (blogDetails, token) => axios.post(`${blogUrl}/compos
     }
 );
 
+export const deleteBlog = (blogid, token) => axios.post(`${blogUrl}/delete/blog=${blogid}`, null, 
+    {
+        headers: {
+            Authorization: `BEARER ${token}`,
+        }
+    }
+);
+
