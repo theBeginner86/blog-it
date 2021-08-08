@@ -44,31 +44,36 @@ function SignUp(props) {
     };
 
     
-    return ( 
-        <div className="signup content">
+    return (
+        
+        <div className="content">
+            <div className="signup-content">
+                <div className="main main-raised">
+                    <div className="container signup">
+                        <div  className="signup-heading">
+                            <h1 className="heading-per-page">Signup</h1>
+                        </div>
+                        <form onSubmit={handleSubmit} className="signup-form">
+                            <div className="input-values">
+                                {
+                                    (!signupResponse.success) ?  <div className="err-msg"><div className="msg">{signupResponse.message}</div></div> : <div className="err-msg"></div>
+                                }
+                                <div className="input">
+                                    <input type="text" name="firstName" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)}/><br/>
+                                    <input type="text" name="lastName" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)}/><br/> 
+                                    <input type="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/> 
+                                    <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/><br/>
+                                </div>
+                            </div>
+                            <div className="submit-btn" Style={"margin-top: 1rem"}>
+                                <button type="submit">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <div className="container">
-            <div  className="signup-heading">
-                <h1 className="heading-per-page">Signup</h1>
-            </div>
-            <div className="container">
-                <form onSubmit={handleSubmit} className="signup-form">
-                    <div className="container input-values">
-                        {
-                            (!signupResponse.success) ?  <div className="err-msg">{signupResponse.message}</div> : <div className="err-msg"></div>
-                        }
-                       
-                        <input type="text" name="firstName" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)}/><br/>
-                        <input type="text" name="lastName" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)}/><br/> 
-                        <input type="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/> 
-                        <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/><br/>
-                        <button type="submit" className="submit-btn">Sign Up</button>
-                    </div>       
-                </form>
-            </div>
-        </div>
-    
-        </div>
     );
     
 }

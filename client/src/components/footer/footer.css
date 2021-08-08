@@ -1,6 +1,6 @@
 .footer {
     background-color: #C2FFD9;
-    padding: 20px 20px 20px 20px;
+    padding: 60px 20px;
 }
 
 .footer-link {
@@ -13,26 +13,29 @@
     width: fit-content;
 }
 
- .links {
+.links {
     font-size: large;
 }
 
- .links:hover {
+.links:hover {
     color:  #ff577f;
     text-decoration: none;
     font-size: larger;
 }
 
- .copyright {
+.copyright {
     color: black;
     padding: 30px 0px 20px 0px;
     margin: 0;
-    font-size: small;}
+    font-size: small;
+}
 
 .profile-img {
     width: 25px;
-    height: 25px;}
+    height: 25px;
+}
 
- .profile-img:hover {
+.profile-img:hover {
     width: 30px;
-    height: 30px;}
+    height: 30px;
+}

@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react'
 
-import Compose from '../compose/compose';
-
 import { getAllBlogs } from '../../api/userApi';
 
 import './blog.css';
@@ -25,8 +23,9 @@ function Blogs(props){
     return (
 
         <div className="content">
+        <h1 className="heading-per-page">Blogs</h1>
         {   
-            (blogs.length <= 1) ? 
+            (blogs.length < 1) ? 
 
             (
                 <div className="blog-content">
@@ -50,7 +49,7 @@ function Blogs(props){
                 </div>
             )
             :
-            blogs.map((blog, index) => {
+            blogs.slice(0).reverse().map((blog, index) => {
                 return (
                     <React.Fragment>
                         <div className="blog-content" key={index}>

@@ -40,28 +40,33 @@ function SignIn(props) {
     }
 
     return (
-        <div className="signin content">
+        
+        <div className="content">
+            <div className="signin-content">
+                <div className="main main-raised">
+                    <div className="container signin">
+                    <div  className="signin-heading">
+                        <h1 className="heading-per-page">Login</h1>
+                    </div>
+                        <form onSubmit={handleSubmit} className="signin-form">
+                            <div className="input-values">
+                                {
+                                    (!signinResponse.success) ?  <div className="err-msg"><div className="msg">{signinResponse.message}</div></div> : <div className="err-msg"></div>
+                                }
+                                <div className="input">
+                                    <input type="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/> 
+                                    <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/><br/>
+                                </div>
+                            </div>
+                            <div className="submit-btn" Style={"margin-top: 1rem"}>
+                                <button type="submit" className="submit-btn">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <div className="container">
-            <div  className="signin-heading">
-                <h1 className="heading-per-page">Login</h1>
-            </div>
-            <div className="container">
-                <form onSubmit={handleSubmit} className="signin-form">
-                    <div className="container input-values">
-                        {
-                            (!signinResponse.success) ?  <div className="err-msg">{signinResponse.message}</div> : <div className="err-msg"></div>
-                        }
-                       
-                        <input type="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/> 
-                        <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/><br/>
-                        <button type="submit" className="submit-btn">Sign In</button>
-                    </div>       
-                </form>
-            </div>
-        </div>
-    
-        </div>
     );
 }
 
