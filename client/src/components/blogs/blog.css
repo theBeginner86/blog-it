@@ -15,6 +15,14 @@
     z-index: 3;
 }
 
+.blog-content .ud-op .delete-btn {
+    margin-left: 845px;
+}
+
+.blog-content .msg {
+    color: red;
+}
+
 .blog-content .title {
     margin-bottom: 7px;
     min-height: 32px;

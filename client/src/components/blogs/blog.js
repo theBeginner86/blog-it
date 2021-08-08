@@ -23,6 +23,7 @@ function Blogs(props){
     return (
 
         <div className="content">
+        <h1 className="heading-per-page">Blogs</h1>
         {   
             (blogs.length < 1) ? 
 
