@@ -17,6 +17,12 @@
 
 .blog-content .ud-op .delete-btn {
     margin-left: 845px;
+    /* float: left; */
+}
+
+.blog-content .ud-op .update-btn {
+    /* margin-left: 845px; */
+    float: right;
 }
 
 .blog-content .msg {

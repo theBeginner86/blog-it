@@ -58,6 +58,17 @@ function ProfilePage(props){
         console.log("clicked", blogid);
     }
 
+    // async function updateBlogs(blogid, title, content) {
+    //     console.log("inside update");
+    //     console.log(props)
+    //     props = {
+    //         blogid,
+    //         title,
+    //         content
+    //     };
+    //     console.log(props);
+    // }
+
     useEffect(() => {
         const fetchBlogs = async () => {
             console.log(userid)
@@ -125,6 +136,7 @@ function ProfilePage(props){
                                             (!delStatus.success && blog._id===delBlog) ?  <div className="err-msg"><div className="msg">{delStatus.message}</div></div> : <div className="err-msg"></div>
                                         }
                                         <div className="ud-op">
+                                            {/* <button className="update-btn" onClick={() => updateBlogs(blog._id, blog.title, blog.content)}>Update</button> */}
                                             <button className="delete-btn" onClick={() => deleteBlogs(blog._id)}>Delete</button>
                                         </div>
                                         <h1 className="title">{blog.title}</h1>

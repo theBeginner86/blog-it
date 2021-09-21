@@ -14,6 +14,7 @@ import Compose from './components/compose/compose';
 function App(props) {
 
   const [isLogout, setIsLogout] = useState(true);
+  // console.log(props.title);
 
   useEffect(() => {
     if(localStorage.getItem("token")){
