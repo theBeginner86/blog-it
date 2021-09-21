@@ -166,4 +166,55 @@ router.post("/delete/blog=:blogid", authenticateToken, async(req, res) => {
     })
 });
 
+router.post("/update/blog=:blogid", authenticateToken, async(req, res) => {
+    console.log("working params: ",  "blogid: ", req.params.blogid);
+    const blogid = req.params.blogid;
+
+    const {
+        title,
+        content,
+    } = req.body;
+
+    console.log(title, content);
+
+    if (!title){
+        return res.send({
+            success: false,
+            message: "Error: Title cannot be empty"
+        });
+    }
+
+    if (!content){
+        return res.send({
+            success: false,
+            message: "Error: Content cannot be empty"
+        })
+    }
+
+    Blog.updateOne({
+        _id: blogid
+    }, {
+        $set: {
+            title: title,
+            content: content
+        }
+    }, 
+    async(err, response) => {
+        if(err){
+            return res.send({
+                success: false,
+                message: "Error: DB Error"
+            });
+        }
+
+        console.log(response);
+
+        return res.send({
+            success: true,
+            message: "Blog Updated successfully"
+        });
+    });
+});
+
+
 module.exports = router;

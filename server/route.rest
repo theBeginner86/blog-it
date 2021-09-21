@@ -3,10 +3,10 @@ POST http://localhost:4000/account/signup
 Content-Type: application/json
 
 {
-    "firstName": "new",
-    "lastName": "account",
-    "email": "new.account@gmail.com",
-    "password": "goodbad"
+    "firstName": "jap",
+    "lastName": "1",
+    "email": "jap1@test.com",
+    "password": "test"
 }
 
 ###
@@ -15,15 +15,47 @@ POST http://localhost:4000/account/signin
 Content-Type: application/json
 
 {
-    "email": "new.account@gmail.com",
-    "password": "goodbad"
+    "email": "jap1@test.com",
+    "password": "test"
 }
 
 ###
 
-POST http://localhost:4000/account/verify/user
-Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImZpcnN0TmFtZSI6Im5ldyIsImxhc3ROYW1lIjoiYWNjb3VudCIsImVtYWlsIjoibmV3LmFjY291bnRAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMDgkWjNRb0hPVDN2TVdDQndwZ1dlcDZsdUZLcElQeS9FZlB4TU0vNkVYYS50em82a1ptbWZSTk8iLCJfaWQiOiI2MTAyNGVjYmYwNWU0NzJhYmE4MDg0NTEiLCJfX3YiOjB9LCJpYXQiOjE2Mjc1NDEyMjUsImV4cCI6MTYyNzU0MTI0MH0.K4SLws9Ezl3mfYKleFwrJWJvCEbzaz5fJr3nvKzG-68
+GET http://localhost:4000/account/verify/user
+Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjEwZmNhZDYyMDhiZDM3NDBjNjY4MWRhIiwiaWF0IjoxNjI4NDMwOTc1fQ.WVpktuI7K28j4DwkihsNtpZPOJWN955p8EwvhTrTTo0
 
 ###
 
+POST http://localhost:4000/blog/compose
+Content-Type: application/json
+Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjEwZmNhZDYyMDhiZDM3NDBjNjY4MWRhIiwiaWF0IjoxNjI4NDMwOTAwfQ.wf-RmikKiR6zrlEBVzVtNxiM9XZG_aI_Gp-q-q8CNFM
 
+{
+    "title": "Japanese Language",
+    "content": "Must try it!!"
+}
+
+###
+
+GET http://localhost:4000/blog/display/all
+
+
+###
+
+GET http://localhost:4000/blog/display/user=610b8e46f634f30a86d5e4e2
+Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjEwN2FhM2U2YzU3OTAxN2UxZTZmYjkwIiwiaWF0IjoxNjI3ODkyMjkyfQ.xya51K8oVsMMyag98C8DtPl8mb_TbJOkAeG3iPNYZ9M
+
+###
+
+POST http://localhost:4000/blog/delete/blog=610dba259378f441d05fec2e
+Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjEwZmNhZDYyMDhiZDM3NDBjNjY4MWRhIiwiaWF0IjoxNjI4NDI0OTkyfQ.1uQIYp0GQyn-kAiZDbNdEfvGQ5pW5gghYea9qfFo56o
+
+###
+POST http://localhost:4000/blog/update/blog=610fe24a28db1f8ccd644ac5
+Content-Type: application/json
+Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjEwZmNhZDYyMDhiZDM3NDBjNjY4MWRhIiwiaWF0IjoxNjI4NDMwOTc1fQ.WVpktuI7K28j4DwkihsNtpZPOJWN955p8EwvhTrTTo0
+
+{
+    "title": "French Language",
+    "content": "Must try french!!!"
+}
