@@ -12,7 +12,7 @@ function Footer(props){
                     <Link className="footer-link" to={{pathname: "https://github.com/theBeginner86"}} target="_blank"><img className="profile-img" src={githubLogo} alt="github-icon"/></Link>
                     <Link className="footer-link" to={{pathname: "https://www.linkedin.com/in/pranav-singh-00904b1bb/"}} target="_blank"><img className="profile-img" src={linkedinLogo} alt="linkedin-icon"/></Link>
                     <Link className="footer-link" to={{pathname: "https://twitter.com/theBeginner86"}} target="_blank"><img className="profile-img" src={twitterLogo} alt="twitter-icon"/></Link>
-                    <p className="copyright">© 2021 Pranav Singh.</p>
+                    <p className="copyright">© 2022 Pranav Singh.</p>
             </div>   
         </div>
     )

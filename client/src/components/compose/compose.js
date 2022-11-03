@@ -52,7 +52,7 @@ function Compose(props){
                         }
                             <input className="title" type="text" name="title" value={title} placeholder="Title" onChange={(e) => setTitle(e.target.value)}/><br/>
                             <hr/>
-                            <textarea className="text-area" type="text" cols="111" rows="10" name="blog" value={blog} placeholder="Use this area to compose your blog" onChange={(e) => setBlog(e.target.value)}/><br/>
+                            <textarea className="text-area" type="text" cols="60" rows="10" name="blog" value={blog} placeholder="Use this area to compose your blog" onChange={(e) => setBlog(e.target.value)}/><br/>
                             <hr Style={"margin-top:1rem"}/>
                             <div className="submit-btn">
                                 <button type="submit" onClick={handleSubmit}>Submit</button>

@@ -13,7 +13,7 @@
 
 .blog-content .compose-area .title {
     margin: 0.5rem 0 0.5rem 0;
-    width: 56rem;
+    width: 30rem;
 }
 
 .blog-content .text-area {
@@ -23,4 +23,8 @@
 .submit-btn {
     margin: 1rem auto;
     width: fit-content;
+}
+
+.title {
+    width: 30rem;
 }
