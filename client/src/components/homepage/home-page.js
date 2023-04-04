@@ -9,7 +9,7 @@ function HomePage(props) {
                 <div className="container blog-description">
                     <p style={{margin: "1rem auto", width: "fit-content"}}>This is a simple blogging app. You can create a new blog post, edit it, delete it and view it.</p>
                     <p style={{margin: "1rem auto", width: "fit-content"}}>It support account system and persisting of users blogs</p>
-                    <p style={{margin: "1rem auto", width: "fit-content"}}>This project is part of Frontend Design and Testing (CSI3029)</p>
+                    <p style={{margin: "1rem auto", width: "fit-content"}}>This project is part of Advanced Server Side Programming (CSI3023)</p>
                     <br/>
                 </div>
             </div>

@@ -85,12 +85,12 @@ function ProfilePage(props){
             <h1 className="heading-per-page">My Profile</h1>
             <div className="profile-content">
                 <div className="main main-raised">
-                    <div className="container profile" Style={"text-align: center; width: 40rem; margin: auto;"}>
+                    <div className="container profile" Style={"text-align: center;margin: auto;"}>
                         <div className="avatar">
-                            <img className="img-raised rounded-circle img-fluid" src={profilePictureUrl} alt="Circle-Image"/>
+                            {/* <img className="img-raised rounded-circle img-fluid" src={profilePictureUrl} alt="Circle-Image"/> */}
                         </div>
                         <div className="name">
-                            <h3 className="title">{firstName} {lastName}</h3>
+                            <h3 className="title" style={{margin: "auto"}}>{firstName} {lastName}</h3>
                             <h6>{email}</h6>
                             <h6>Designer</h6>
                             <a href="#pablo" className="btn btn-just-icon btn-link btn-dribbble"><i className="fa fa-dribbble"></i></a>
@@ -100,6 +100,8 @@ function ProfilePage(props){
                     </div>
                 </div>
             </div>
+
+            <hr />
 
             {   
                 (!blogs)  
@@ -129,6 +131,7 @@ function ProfilePage(props){
                 blogs.slice(0).reverse().map((blog, index) => {
                     return (
                         <React.Fragment>
+                            <h1 className="heading-per-page">My Blogs</h1>
                             <div className="blog-content" key={index}>
                                 <div className="main main-raised">
                                     <div className="container blog">

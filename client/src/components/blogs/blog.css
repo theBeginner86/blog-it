@@ -16,7 +16,7 @@
 }
 
 .blog-content .ud-op .delete-btn {
-    margin-left: 845px;
+    margin-left: 30rem;
     /* float: left; */
 }
 
@@ -53,7 +53,7 @@
 .blog-content p {
     font-size: 20px;
     margin: auto;
-    width: 800px;
+    /* width: 800px; */
 }
 
 .blog-content .blog-info {
