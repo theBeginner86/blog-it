@@ -23,7 +23,7 @@ function Blogs(props){
     return (
 
         <div className="content">
-        <h1 className="heading-per-page">Blogs</h1>
+        <h1 className="heading-per-page">Published Books</h1>
         {   
             (blogs.length < 1) ? 
 
@@ -31,7 +31,7 @@ function Blogs(props){
                 <div className="blog-content">
                     <div className="main main-raised">
                         <div className="container blog">
-                            <h1 className="title">Test Blog</h1>
+                            <h1 className="title">Test Book</h1>
                             <hr/>
                             <p className="description">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 

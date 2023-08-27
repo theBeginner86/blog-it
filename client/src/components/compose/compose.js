@@ -48,11 +48,11 @@ function Compose(props){
                         {/* <h1 className="title">Compose</h1> */}
                         <form onSubmit={handleSubmit} className="compose-area">
                         {
-                            (!composeResponse.success) ?  <div className="err-msg">{composeResponse.message}</div> : <div className="success-msg">Blog Saved Successfully</div>
+                            (!composeResponse.success) ?  <div className="err-msg">{composeResponse.message}</div> : <div className="success-msg">Book Published Successfully</div>
                         }
                             <input className="title" type="text" name="title" value={title} placeholder="Title" onChange={(e) => setTitle(e.target.value)}/><br/>
                             <hr/>
-                            <textarea className="text-area" type="text" cols="60" rows="10" name="blog" value={blog} placeholder="Use this area to compose your blog" onChange={(e) => setBlog(e.target.value)}/><br/>
+                            <textarea className="text-area" type="text" cols="60" rows="10" name="blog" value={blog} placeholder="Content of you new book" onChange={(e) => setBlog(e.target.value)}/><br/>
                             <hr Style={"margin-top:1rem"}/>
                             <div className="submit-btn">
                                 <button type="submit" onClick={handleSubmit}>Submit</button>

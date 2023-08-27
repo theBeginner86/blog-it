@@ -110,7 +110,7 @@ function ProfilePage(props){
                     <div className="blog-content">
                         <div className="main main-raised">
                             <div className="container blog">
-                                <h1 className="title">Test Blog</h1>
+                                <h1 className="title">Test Book</h1>
                                 <hr/>
                                 <p className="description">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -131,7 +131,7 @@ function ProfilePage(props){
                 blogs.slice(0).reverse().map((blog, index) => {
                     return (
                         <React.Fragment>
-                            <h1 className="heading-per-page">My Blogs</h1>
+                            <h1 className="heading-per-page">My Books</h1>
                             <div className="blog-content" key={index}>
                                 <div className="main main-raised">
                                     <div className="container blog">

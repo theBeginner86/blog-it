@@ -14,12 +14,12 @@ function MyNavbar(props) {
             <Router>
                 <Navbar className="navbar">
                     <Container>
-                        <Navbar.Brand href="/">Blog It</Navbar.Brand>
+                        <Navbar.Brand href="/">Home</Navbar.Brand>
                         <Nav className="me-auto">
-                        <Nav.Link href="/blogs">Blogs</Nav.Link>
+                        <Nav.Link href="/blogs">Books</Nav.Link>
                             { !isLogout && (
                                 <React.Fragment>
-                                    <Nav.Link href="/compose">Compose</Nav.Link>
+                                    <Nav.Link href="/compose">Publish</Nav.Link>
                                     <Nav.Link href="/" onClick={logOutHandle}>Log Out</Nav.Link> 
                                     <Nav.Link href='/profile'>Profile</Nav.Link>
                                 </React.Fragment> 
