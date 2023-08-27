@@ -1,0 +1,26 @@
+.compose-area {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.compose-area .err-msg {
+    color: red;
+}
+
+.compose-area .success-msg {
+    color: green;
+}
+
+.blog-content .compose-area .title {
+    margin: 0.5rem 0 0.5rem 0;
+    width: 56rem;
+}
+
+.blog-content .text-area {
+    margin-top: 1rem;
+}
+
+.submit-btn {
+    margin: 1rem auto;
+    width: fit-content;
+}

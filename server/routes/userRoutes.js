@@ -1,7 +1,11 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
+const jwt = require("jsonwebtoken");
+const dotenv = require('dotenv');
+dotenv.config();
 
 const User = require('../models/user');
+const { authenticateToken, generateAccessToken } = require('../utils/authenticateToken');
 
 
 const router = express.Router();
@@ -71,7 +75,7 @@ router.post("/signup", async (req, res)=> {
                     message: "Error: Server Error"
                 });
             };
-            console.log(response);
+            // console.log(response);
             return res.send({
                 success: true,
                 message: "User Sign up successfully"
@@ -80,7 +84,6 @@ router.post("/signup", async (req, res)=> {
 
     });
 });
-
 
 router.post("/signin", async (req, res) => {
     const email = req.body.email.toLowerCase();
@@ -126,12 +129,48 @@ router.post("/signin", async (req, res) => {
             });
         }
 
-        
+        // console.log(user);
 
-        console.log("Signed in successfully.");
+        const accessToken = generateAccessToken(user._id);
+        // const refershToken = jwt.sign({user}, process.env.REFRESH_TOKEN_SECRET); future addition
+        res.json({
+            success: true,
+            accessToken: accessToken,
+            // refershToken: refershToken  future addition
+        });
 
     });
     
 });
+
+router.get("/verify/user", authenticateToken, (req, res) => {
+    const userid = req.userid;
+    console.log(userid);
+    console.log("user verified...");
+    User.find({ 
+        _id: userid.user 
+    }, (err, currentUser) => {
+        if(err){
+            return res.send({
+                success: false,
+                message: "Error: DB Error"
+            });
+        }
+
+        return res.send({
+            success: true,
+            user: currentUser
+        });
+    })
+});
+
+// router.get("/token", (req, res) => {         future addition
+//     const refereshToken = req.body.token;
+//     if(refereshToken == null) return res.send({
+//         success: false,
+//         message: "Error: Invalid refersh token"
+//     })
+// })
+
 
 module.exports = router;
